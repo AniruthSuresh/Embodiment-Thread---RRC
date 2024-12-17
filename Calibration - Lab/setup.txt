@@ -1,0 +1,6 @@
+Get the bag file from /Calibration-Lab local directory
+
+1. First extract the camera info and the pictures using the ros_convert.py
+2. Extract the joint angles and then time synchronize it using time_synchornize.py
+3. Set the camera position and orientation and the K matrix (projection matrix code) in the main_plus_overlay.py and then run it !
+
