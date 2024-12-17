@@ -1,0 +1,19 @@
+# SETUP
+
+conda create --name droid_setup python=3.10
+
+
+Go to https://www.stereolabs.com/en-in/developers/release#82af3640d775 and download the one suiting your specification 
+After that just run that downloaded file : 
+
+chmod +x ZED_SDK_Ubuntu22_cuda12.1_v4.2.2.zstd.run
+./ZED_SDK_Ubuntu22_cuda12.1_v4.2.2.zstd.run
+
+
+conda install numpy
+
+
+# USAGE 
+python3 svo_reader_dum.py    # should hopefully print the K matrix without error :)
+
+
