@@ -1,3 +1,6 @@
 [submodule "Exact_Panda/bullet3"]
 	path = Exact_Panda/bullet3
 	url = https://github.com/bulletphysics/bullet3
+[submodule "Exact_Panda/robotiq_arg85_description"]
+	path = Exact_Panda/robotiq_arg85_description
+	url = https://github.com/a-price/robotiq_arg85_description
