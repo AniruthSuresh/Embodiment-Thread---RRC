@@ -1,0 +1,1 @@
+The franka main arm structure is using the https://github.com/bulletphysics/bullet3/blob/master/examples/pybullet/gym/pybullet_data/franka_panda/panda.urdf and the gripper is from https://github.com/a-price/robotiq_arg85_description
