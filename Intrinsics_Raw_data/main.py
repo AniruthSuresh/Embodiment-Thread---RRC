@@ -2,7 +2,14 @@ import os
 from camera_utils import SVOReader
 import cv2
 
-svo_files = ["/home/aniruth/Desktop/RRC/Embodiment-Thread---RRC/Intrinsics_Raw_data/data/22246076.svo"]
+# svo_files = ["/home/aniruth/Desktop/RRC/Embodiment-Thread---RRC/Intrinsics_Raw_data/data/22246076.svo"]
+
+svo_files = ["./data/22246076.svo"]
+# NOTE : The aspect ratio is the same 
+# (780 ,1280 ) -> (180 , 320)
+
+target_height = 180
+target_width = 320
 
 for svo_file in svo_files:
     serial_number = svo_file.split("/")[-1][:-4]
@@ -36,10 +43,14 @@ for svo_file in svo_files:
         right_image = data["image"].get(serial_number + "_right")
 
         if left_image is not None and right_image is not None:
-            # Save left and right images into their respective folders
+            # Downscale the images
+            left_image_resized = cv2.resize(left_image, (target_width, target_height), interpolation=cv2.INTER_AREA)
+            right_image_resized = cv2.resize(right_image, (target_width, target_height), interpolation=cv2.INTER_AREA)
+
+            # Save the downscaled images
             left_image_path = os.path.join(left_folder, f"{serial_number}_left_{frame_index:04d}.png")
             right_image_path = os.path.join(right_folder, f"{serial_number}_right_{frame_index:04d}.png")
-            cv2.imwrite(left_image_path, left_image)
-            cv2.imwrite(right_image_path, right_image)
+            cv2.imwrite(left_image_path, left_image_resized)
+            cv2.imwrite(right_image_path, right_image_resized)
 
-    print("Finished extracting images and parameters.")
+    print("Finished extracting, downscaling, and saving images.")
