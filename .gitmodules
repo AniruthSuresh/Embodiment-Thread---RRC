@@ -4,3 +4,6 @@
 [submodule "Exact_Panda/robotiq_arg85_description"]
 	path = Exact_Panda/robotiq_arg85_description
 	url = https://github.com/a-price/robotiq_arg85_description
+[submodule "Finetuning using SAM/Finetuning using SAM/segment-anything"]
+	path = Finetuning using SAM/Finetuning using SAM/segment-anything
+	url = https://github.com/facebookresearch/segment-anything
